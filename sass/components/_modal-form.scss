@@ -40,9 +40,9 @@
   transform: translateY(-50%);
   fill: var(--black-color);
   transition: fill 250ms cubic-bezier(0.4, 0, 0.2, 1);
-}
-.modal-form-input:focus + .modal-form-icon {
-  fill: var(--accent-color);
+  .modal-form-input:focus + & {
+    fill: var(--accent-color);
+  }
 }
 
 .modal-form-message {
@@ -54,19 +54,22 @@
   padding: 12px 16px;
   resize: none;
   transition: border-color 250ms cubic-bezier(0.4, 0, 0.2, 1);
+
+  &::placeholder {
+    text-transform: uppercase;
+    color: rgba(117, 117, 117, 0.5);
+  }
+
+  &:focus {
+    outline: none;
+    border-color: var(--accent-color);
+  }
 }
+
 .form-message {
   margin-bottom: 20px;
 }
-.modal-form-message::placeholder {
-  text-transform: uppercase;
-  color: rgba(117, 117, 117, 0.5);
-}
 
-.modal-form-message:focus {
-  outline: none;
-  border-color: var(--accent-color);
-}
 .modal-form-label-link {
   color: var(--accent-color);
   font-weight: 400;
@@ -83,29 +86,32 @@
   letter-spacing: 0.03em;
   color: var(--secondary-color);
   margin-bottom: 30px;
+
+  &::before {
+    display: block;
+    content: "";
+    width: 16px;
+    height: 15px;
+    border: 2px solid var(--black-color);
+    border-radius: 4px;
+    cursor: pointer;
+    margin-right: 7px;
+  }
+
+  .modal-form-checkbox:checked + &::before {
+    background-image: url(../images/sprint/icon-check.svg);
+    background-color: var(--accent-color);
+    background-repeat: no-repeat;
+    background-position: center;
+    background-origin: padding-box;
+    border: transparent;
+  }
+
+  .modal-form-checkbox:focus + &::before {
+    border-color: var(--accent-color);
+  }
 }
 
-.modal-form-checkbox-label::before {
-  display: block;
-  content: "";
-  width: 16px;
-  height: 15px;
-  border: 2px solid var(--black-color);
-  border-radius: 4px;
-  cursor: pointer;
-  margin-right: 7px;
-}
-.modal-form-checkbox:checked + .modal-form-checkbox-label::before {
-  background-image: url(../images/sprint/icon-check.svg);
-  background-color: var(--accent-color);
-  background-repeat: no-repeat;
-  background-position: center;
-  background-origin: padding-box;
-  border: transparent;
-}
-.modal-form-checkbox:focus + .modal-form-checkbox-label::before {
-  border-color: var(--accent-color);
-}
 .modal-form-btn {
   align-self: center;
   height: 50px;

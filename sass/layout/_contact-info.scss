@@ -5,8 +5,10 @@
   font-style: inherit;
 }
 
-.footer-item:not(:last-child) {
-  margin-bottom: 9px;
+.footer-item {
+  &:not(:last-child) {
+    margin-bottom: 9px;
+  }
 }
 .footer-logo-link {
   font-family: var(--secondary-font);
