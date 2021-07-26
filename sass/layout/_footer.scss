@@ -4,14 +4,18 @@
   padding-bottom: 60px;
 }
 
-.footer-container {
-  display: flex;
-}
-.footer-list {
+.footer__container {
   display: flex;
 }
 
-.footer-title {
+.footer-logo {
+  @extend %logo;
+  margin-bottom: 20px;
+  &--active {
+    color: var(--white-color);
+  }
+}
+.footer__title {
   font-weight: 700;
   font-size: 14px;
   line-height: 1.14;
