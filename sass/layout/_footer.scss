@@ -4,18 +4,16 @@
   padding-bottom: 60px;
 }
 
-.footer__container {
+.footer-container {
   display: flex;
 }
-
-.footer-logo {
-  @extend %logo;
-  margin-bottom: 20px;
-  &--active {
-    color: var(--white-color);
-  }
+.footer-list {
+  display: flex;
 }
-.footer__title {
+.logo-accent {
+  color: var(--accent-color);
+}
+.footer-title {
   font-weight: 700;
   font-size: 14px;
   line-height: 1.14;
